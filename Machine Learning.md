@@ -7,6 +7,7 @@
 #### (1)数据集
 
 <font color=red>数据集</font>(dataset)：对m个样本的描述形成的集合，记为$D$.
+
 $$
 \begin{align}
 &D=\{\mathbf{x_1},\mathbf{x_2},...\mathbf{x_m}\} \\\\
@@ -17,9 +18,9 @@ $$
 ...\\
 特征(j):描述(j)
 \end{matrix}\right]\\\\
-
 \end{align}
 $$
+
 所有特征张成<font color=red>属性空间</font>(特征空间、样本空间、输入空间)
 
 特征的数目即为属性空间的<font color=red>维数</font>(dimensionality).
