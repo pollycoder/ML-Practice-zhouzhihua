@@ -6,7 +6,7 @@
 
 #### (1)数据集
 
-<font color=red>数据集</font>(dataset)：对m个样本的描述形成的集合，记为$D$.
+$\color{red}{数据集(dataset)}$：对m个样本的描述形成的集合，记为$D$.
 
 $$
 \begin{align}
@@ -21,17 +21,19 @@ $$
 \end{align}
 $$
 
-所有特征张成<font color=red>属性空间</font>(特征空间、样本空间、输入空间)
+所有特征张成$\color{red}{属性空间}$(特征空间、样本空间、输入空间)
 
 特征的数目即为属性空间的<font color=red>维数</font>(dimensionality).
 
-$\mathbf{x_i}$又被称为<font color=red>特征向量</font>(feature vector).
+$\mathbf{x_i}$又被称为<$\color{red}{特征向量}$(feature vector).
 
 #### (2)学习
 
-##### (a) <font color=red>学习</font>(learning)：从数据中学得模型的过程，又称训练(training).
+##### (a) $\color{red}{学习}$(learning)：从数据中学得模型的过程，又称训练(training).
 
-<font color=yellow>Tips：也就是说学习算法本身并不是模型，学习之后获得的实例化算法才是投入使用的模型，学习算法是用来获取最终模型的.</font>
+$\color{yellow}{Tips：也就是说学习算法本身并不是模型，学习之后获得的实例化算}$
+
+$\color{yellow}{法才是投入使用的模型，学习算法是用来获取最终模型的.}$
 
 > 训练数据：训练过程中使用的数据
 >
@@ -41,9 +43,9 @@ $\mathbf{x_i}$又被称为<font color=red>特征向量</font>(feature vector).
 >
 > 样例：$(\mathbf{x_i},\upsilon_i)$，前者为示例，后者为标记，也就是监督的对象
 
-<font color=red>模型</font>(model)：对应了数据的某种潜在规律，又称<font color=orange>假设 </font>(hypothesis)
+$\color{red}{模型}$(model)：对应了数据的某种潜在规律，又称$\color{orange}{假设 }$(hypothesis)
 
-> 实际的潜在规律称为<font color=red>真相/真实</font>(ground-truth)
+> 实际的潜在规律称为$\color{red}{真相/真实}$(ground-truth)
 
 ###### 分类问题(classification)：预测离散值
 
@@ -55,17 +57,17 @@ ii)多分类(multi-class classification)：多个类别
 
 ###### 回归问题(regression)：预测连续值
 
-##### (b)<font color=red>测试</font>(testing)：对学得模型进行测试
+##### (b)$\color{red}{测试}$(testing)：对学得模型进行测试
 
 测试样本(testing sample)：被预测的样本
 
 ##### (c)监督学习和无监督学习
 
-<font color=red>监督学习</font>(supervised learning)：训练数据有标记
+$\color{red}{监督学习}$(supervised learning)：训练数据有标记
 
 > 分类、回归问题
 
-<font color=red>无监督学习</font>(unsupervised learning)：训练数据没有标记信息
+$\color{red}{无监督学习}$(unsupervised learning)：训练数据没有标记信息
 
 > 聚类(clustering)：将训练集中的样本分成若干组(簇)
 
@@ -83,7 +85,7 @@ ii)多分类(multi-class classification)：多个类别
 
 目前多数研究广义归纳学习
 
-狭义归纳学习又称<font color=red>概念学习</font>
+狭义归纳学习又称$\color{red}{概念学习}$
 
 #### (1)概念学习
 
@@ -98,11 +100,11 @@ $$
 
 学习过程：对假设空间进行搜索，最后获得与训练集一致的假设
 
-<font color=yellow>版本空间(version space)：与训练集一致的“假设空间”</font>
+$\color{red}{版本空间(version space)}$：与训练集一致的“假设空间”
 
 ### 3.归纳偏好
 
-机器学习算法在学习过程中对某种类型假设的偏好称为<font color=red>归纳偏好</font>(inductive bias).
+机器学习算法在学习过程中对某种类型假设的偏好称为$\color{red}{归纳偏好}$(inductive bias).
 
 归纳偏好的作用：(图中散点代表有限训练集，但最终需要的曲线只有一条)
 
@@ -110,13 +112,13 @@ $$
 
 #### (1)奥卡姆剃刀(Occam's razor)原则
 
-多个假设取**<font color=red>最简</font>**，多数情况越平滑的曲线越简单
+多个假设取$\color{red}{最简}$，多数情况越平滑的曲线越简单
 
 #### (2)“没有免费的午餐(No Free Lunch, NFL)”定理
 
 对于一个学习算法$\mathcal{L}_a$，若它在某些问题上比学习算法$\mathcal{L}_b$好，则必然存在另一些问题，在那里$\mathcal{L}_b$比$\mathcal{L}_a$好
 
-<font color=yellow>Tip:简言之就是没有适用于所有预测场景的学习算法.</font>
+$\color{yellow}{Tip:简言之就是没有适用于所有预测场景的学习算法.}$
 
 ## Chapter 2 模型评估与选择
 
