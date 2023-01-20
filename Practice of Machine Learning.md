@@ -4,11 +4,11 @@
 
 ### 1.1
 
-![Screenshot 2023-01-19 at 17.38.42](/Users/polly/Library/Application Support/typora-user-images/Screenshot 2023-01-19 at 17.38.42.png)
+![Screenshot 2023-01-19 at 17.38.42](/Users/polly/Desktop/寒假/ML-Practice-zhouzhihua/img/1.1.png)
 
 ### 1.2
 
-![Screenshot 2023-01-19 at 19.42.10](/Users/polly/Library/Application Support/typora-user-images/Screenshot 2023-01-19 at 19.42.10.png)
+![Screenshot 2023-01-19 at 19.42.10](/Users/polly/Desktop/寒假/ML-Practice-zhouzhihua/img/1.2.png)
 
 不包括\*，一共有2\*3\*3=18种单个合取式表示的假设
 
@@ -40,7 +40,7 @@
 
 ### 1.4
 
-![Screenshot 2023-01-20 at 11.51.30](/Users/polly/Library/Application Support/typora-user-images/Screenshot 2023-01-20 at 11.51.30.png)
+![Screenshot 2023-01-20 at 11.51.30](/Users/polly/Desktop/寒假/ML-Practice-zhouzhihua/img/1.4.png)
 
 
 

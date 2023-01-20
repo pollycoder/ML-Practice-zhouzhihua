@@ -105,7 +105,7 @@ $$
 
 归纳偏好的作用：(图中散点代表有限训练集，但最终需要的曲线只有一条)
 
-![Screenshot 2023-01-19 at 11.54.09](/Users/polly/Library/Application Support/typora-user-images/Screenshot 2023-01-19 at 11.54.09.png)
+![Screenshot 2023-01-19 at 11.54.09](/Users/polly/Desktop/寒假/ML-Practice-zhouzhihua/img/bias.png)
 
 #### (1)奥卡姆剃刀(Occam's razor)原则
 
