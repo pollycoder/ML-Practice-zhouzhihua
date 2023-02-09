@@ -269,3 +269,89 @@ $$
 
 #### (4)代价敏感错误率与代价曲线
 
+<font color=red>最终目标：最小化总体代价(total cost)</font>
+
+非均等代价(unequal cost)：权衡不同错误的后果
+
+代价矩阵：正确预测均无代价，损失对比看比值
+
+![Screenshot 2023-02-08 at 11.33.22](/Users/polly/Library/Application Support/typora-user-images/Screenshot 2023-02-08 at 11.33.22.png)
+
+代价敏感错误率：
+$$
+E(f;D;cost)=\frac{1}{m}(\sum_{x_i\in D^+}II(f(x_i\neq y_i)\cross cost_{01}\\+\sum_{x_i\in D^-}II(f(x_i\neq y_i)\cross cost_{10}
+$$
+可在此基础上给出基于分布的敏感错误率
+
+代价曲线：
+
+![Screenshot 2023-02-08 at 13.23.32](/Users/polly/Library/Application Support/typora-user-images/Screenshot 2023-02-08 at 13.23.32.png)
+
+正例概率代价：
+$$
+P(+)_{cost}=\frac{p\cross cost_{01}}{p\cross cost_{01}+(1-p)\cross cost_{10}}
+$$
+
+> p为样例为正例的概率
+>
+> 解释：
+>
+> 分母代表样例本身是正例且预测错误的加权代价；
+>
+> 分子代表所有预测错误的情形的代价总和；
+>
+> 也就是说原式代表已知预测错误的情况下样例实际为正例的相对代价
+
+归一化代价：
+$$
+cost_{norm}=\frac{FNR\cross p\cross cost_{01}+FPR\cross (1-p)\cross cost_{10}}{p\cross cost_{01}+(1-p)\cross cost_{10}}
+$$
+
+>FPR:假正例率
+>
+>FNR:假负例率
+
+曲线绘制：
+
+ROC上每一点对应代价平面上端点为(0,FPR)和(1,FNR)的线段，把所有线画出来下面的公共区域面积即为所有条件下学习器的期望总体代价
+
+### 2.4 比较检验
+
+#### (1)假设检验
+
+假设：对学习器泛化错误率分布的判断
+
+本质：在假设成立的条件下，反常的实验应当是小概率事件，所以当实验现象出现在概率小于我们设定的显著度$\alpha$的区域（拒绝域）时，就拒绝假设.
+
+> e.g. $H_0$: $\epsilon=\epsilon_0$
+>
+> e.g.$H_0$: $\epsilon\leq\epsilon_0$
+
+##### 1)二项检验
+
+<font color=red>假设：单个模型的泛化错误率 </font>$\textcolor{red}{\epsilon\leq\epsilon_0}$，符合二项分布
+$$
+\bar{\epsilon}=max_{\epsilon}(s.t.\sum_{i=\epsilon_0\cross m+1}^{m}(^m_i)\epsilon^{i}(1-\epsilon)^{m-i}<\alpha)
+$$
+
+##### 2)t-检验
+
+<font color=red>假设：k个模型泛化错误率平均值为 </font>$\textcolor{red}{\mu}$<font color=red>，假设</font>$\textcolor{red}{\epsilon=\mu.}$
+
+错误率：
+$$
+\mu=\frac{1}{k}\sum_{i=1}^{k}\hat{\epsilon_i}
+$$
+方差
+$$
+\sigma^2=\frac{1}{k-1}\sum_{i=1}^{k}(\hat{\epsilon_i}-\mu)^2
+$$
+统计变量
+$$
+\tau_t =\frac{\sqrt{k}(\mu-\epsilon_0)}{\sigma}
+$$
+符合自由度为k-1的t分布
+
+##### 3)交叉验证t检验
+
+#####  
