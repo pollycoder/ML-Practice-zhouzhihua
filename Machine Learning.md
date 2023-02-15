@@ -317,9 +317,11 @@ ROC上每一点对应代价平面上端点为(0,FPR)和(1,FNR)的线段，把所
 
 ### 2.4 比较检验
 
+目的：比较学习器泛化性能
+
 #### (1)假设检验
 
-假设：对学习器泛化错误率分布的判断
+假设：对<font color=red>单个</font>学习器泛化错误率分布的判断
 
 本质：在假设成立的条件下，反常的实验应当是小概率事件，所以当实验现象出现在概率小于我们设定的显著度$\alpha$的区域（拒绝域）时，就拒绝假设.
 
@@ -329,14 +331,14 @@ ROC上每一点对应代价平面上端点为(0,FPR)和(1,FNR)的线段，把所
 
 ##### 1)二项检验
 
-<font color=red>假设：单个模型的泛化错误率 </font>$\textcolor{red}{\epsilon\leq\epsilon_0}$，符合二项分布
+<font color=red>假设：一次实验，单个模型的泛化错误率 </font>$\textcolor{red}{\epsilon\leq\epsilon_0}$
 $$
 \bar{\epsilon}=max_{\epsilon}(s.t.\sum_{i=\epsilon_0\cross m+1}^{m}(^m_i)\epsilon^{i}(1-\epsilon)^{m-i}<\alpha)
 $$
 
 ##### 2)t-检验
 
-<font color=red>假设：k个模型泛化错误率平均值为 </font>$\textcolor{red}{\mu}$<font color=red>，假设</font>$\textcolor{red}{\epsilon=\mu.}$
+<font color=red>假设：k次实验，k个模型泛化错误率平均值为 </font>$\textcolor{red}{\mu}$<font color=red>，假设</font>$\textcolor{red}{\epsilon=\mu.}$
 
 错误率：
 $$
@@ -350,8 +352,46 @@ $$
 $$
 \tau_t =\frac{\sqrt{k}(\mu-\epsilon_0)}{\sigma}
 $$
-符合自由度为k-1的t分布
+符合自由度为k-1的t分布，
 
-##### 3)交叉验证t检验
+#### 2)交叉验证t检验
+
+假设：对<font color=red>两个</font>学习器A,B性能相同，在k折交叉验证中测试错误率满足$\epsilon_i^A=\epsilon_i^B$.
+
+<font color=red>对每一对$\epsilon_i^A,\epsilon_i^B$成对t检验，求差：$\Delta_i=\epsilon_i^A-\epsilon_i^B$，若性能相同应为0.此时对$\Delta_i$做t检验.</font>
+
+统计变量：
+$$
+\tau_t=\abs{\frac{\sqrt{k}\mu}{\sigma}}
+$$
+符合自由度为k-1的t分布.
+
+<font color=yellow>前提：测试错误率均为泛化错误率的独立采样。通常样本有限，使用交叉验证法不同轮次训练会有一定程度重叠，影响测试错误率的独立性，导致过高估计假设成立的概率</font>
+
+>解决方案：5X2交叉验证法
+>
+>5次2折交叉验证，每次先把数据随机打乱，获取两次折的差值$\Delta_i^1,\Delta_i^2$，平均值$\mu_i$，方差$\sigma_i^2$
+>
+>统计变量$\tau_t=\frac{\mu}{\sqrt{\frac{1}{5}\sum_{i=1}^5 \sigma_i^2}}$
+
+#### 3)McNemar检验
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #####  
